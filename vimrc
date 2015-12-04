@@ -15,7 +15,6 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
-
 " Vundle
 set nocompatible
 
@@ -41,5 +40,3 @@ Plugin 'honza/vim-snippets'
 Plugin 'altercation/vim-colors-solarized'
 
 filetype plugin indent on
-
-

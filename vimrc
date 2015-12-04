@@ -32,6 +32,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'henrik/vim-indexed-search'
 Plugin 'vim-scripts/AutoComplPop'
 Plugin 'bling/vim-airline'
+Plugin 'easymotion/vim-easymotion'
 
 " Snippets are seperate from the engine
 Plugin 'honza/vim-snippets'

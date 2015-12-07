@@ -1,19 +1,21 @@
-" General Vim settings
+" Colorscheme
 colorscheme solarized
 set background=dark
 syntax on
+
+" Show number lines on file
 set number
-set backspace=indent,eol,start
 
 " vim-airline statusline appears at all times
 set laststatus=2
 
 " Spacing
 filetype plugin indent on
-set expandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set expandtab 
+set tabstop=4 
+set shiftwidth=4  
+set softtabstop=4" 
+set backspace=indent,eol,start
 
 " Vundle
 set nocompatible

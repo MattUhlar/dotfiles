@@ -18,7 +18,6 @@ set softtabstop=4"
 set backspace=indent,eol,start
 
 " Folding
-set foldmethod=indent
 nnoremap <Space> za
 
 " Vundle

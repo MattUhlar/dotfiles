@@ -77,10 +77,10 @@ filetype plugin indent on
 function! FoldAll()
     let flags = 'W' " Do not wrap around EOF
     " Go to first line of file
-    normal gg 
+    execute "normal gg"
     " Go to opening brace of each function/class/struct
     while search('^{', flags)
         " Fold until closing brace
-        normal zf%
+        execute "normal zf%"
     endwhile
 endfunction

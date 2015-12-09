@@ -1,4 +1,6 @@
 "=====Colorscheme and Appearance=====
+
+" Terminal uses 256 colors
 set t_Co=256
 colorscheme solarized
 set background=dark
@@ -45,6 +47,7 @@ set nocompatible
 
 filetype off
 
+" Set rtp to location of vundle
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 

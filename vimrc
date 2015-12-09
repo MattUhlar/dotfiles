@@ -24,6 +24,19 @@ nnoremap <Space> za
 " Set foreground color of folds
 hi Folded ctermfg=247
 
+" Smart way to move between windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+" Change default mapping and the default command to invoke CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+" Display buffer list and prompt for number
+map <leader>b :ls<CR>:b
+
 "=====Plugins=====
 
 " Vundle

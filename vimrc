@@ -1,4 +1,5 @@
 "=====Colorscheme and Appearance=====
+set t_Co=256
 colorscheme solarized
 set background=dark
 syntax on

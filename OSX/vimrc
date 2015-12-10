@@ -47,12 +47,8 @@ set nocompatible
 
 filetype off
 
-<<<<<<< HEAD
-set rtp+=~/.vim/bundle/Vundle.vim
-=======
 " Set rtp to location of vundle
 set rtp+=~/.vim/bundle/vundle/
->>>>>>> ce3c48aa098834d4587e8455d4389c2084058f26
 call vundle#rc()
 
 Plugin 'scrooloose/nerdtree'

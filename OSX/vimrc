@@ -6,6 +6,9 @@ colorscheme solarized
 set background=dark
 syntax on
 
+" Incremental search highlighting
+set incsearch
+
 " Show number lines on file
 set number
 

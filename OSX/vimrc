@@ -50,12 +50,12 @@ hi Folded ctermfg=247
 "=====Plugins=====
 
 " Allow YCM to work with UltiSnips 
-let g:UltiSnipsSnippetsDir         = $HOME.'/.vim/UltiSnips/'
-let g:UltiSnipsSnippetDirectories  = ["UltiSnips"]
-let g:UltiSnipsExpandTrigger       = "<c-j>"
-let g:UltiSnipsJumpForwardTrigger  = "<c-j>"
-let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
-let g:UltiSnipsListSnippets        = "<c-h>"
+let g:UltiSnipsSnippetsDir        = $HOME.'/.vim/UltiSnips/'
+let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsListSnippets="<c-h>"
 
 let g:ycm_complete_in_comments = 1 
 let g:ycm_seed_identifiers_with_syntax = 1 
@@ -77,6 +77,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'henrik/vim-indexed-search'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'derekwyatt/vim-scala'

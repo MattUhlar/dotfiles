@@ -1,5 +1,4 @@
 "=====Colorscheme and Appearance=====
-
 " Terminal uses 256 colors
 set t_Co=256
 colorscheme solarized
@@ -15,6 +14,9 @@ set number
 " vim-airline statusline appears at all times
 set laststatus=2
 
+" show matching brackets when text indicator is over them
+set showmatch
+
 "=====Spacing=====
 filetype plugin indent on
 set expandtab 
@@ -23,12 +25,7 @@ set shiftwidth=4
 set softtabstop=4" 
 set backspace=indent,eol,start
 
-"=====Folding=====
-
-" toggle folds with spacebar
-nnoremap <Space> za
-" Set foreground color of folds
-hi Folded ctermfg=247
+"=====Moving Around, Tabs, Windows and Buffers=====
 
 " Smart way to move between windows
 map <C-j> <C-W>j
@@ -43,14 +40,32 @@ let g:ctrlp_cmd = 'CtrlP'
 " Display buffer list and prompt for number
 map <leader>b :ls<CR>:b
 
+"=====Folding=====
+
+" toggle folds with spacebar
+nnoremap <Space> za
+" Set foreground color of folds
+hi Folded ctermfg=247
+
 "=====Plugins=====
+
+" Allow YCM to work with UltiSnips 
+let g:UltiSnipsSnippetsDir         = $HOME.'/.vim/UltiSnips/'
+let g:UltiSnipsSnippetDirectories  = ["UltiSnips"]
+let g:UltiSnipsExpandTrigger       = "<c-j>"
+let g:UltiSnipsJumpForwardTrigger  = "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
+let g:UltiSnipsListSnippets        = "<c-h>"
+
+let g:ycm_complete_in_comments = 1 
+let g:ycm_seed_identifiers_with_syntax = 1 
+let g:ycm_collect_identifiers_from_comments_and_strings = 1 
 
 " Vundle
 set nocompatible
 
 filetype off
 
-" Set rtp to location of vundle
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -60,9 +75,11 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'sirver/ultisnips'
 Plugin 'godlygeek/tabular'
 Plugin 'henrik/vim-indexed-search'
-Plugin 'vim-scripts/AutoComplPop'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'bling/vim-airline'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'derekwyatt/vim-scala'
 
 " Snippets are seperate from the engine
 Plugin 'honza/vim-snippets'

@@ -61,6 +61,13 @@ let g:ycm_complete_in_comments = 1
 let g:ycm_seed_identifiers_with_syntax = 1 
 let g:ycm_collect_identifiers_from_comments_and_strings = 1 
 
+let g:ycm_global_ycm_extra_conf = '/Users/mattu/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
+
+" Improved ctrlp searching using cmatcher
+let g:ctrlp_match_func = {'match' : 'matcher#cmatch'}
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_working_path_mode = 'rw'
+
 " Vundle
 set nocompatible
 
@@ -75,12 +82,14 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'sirver/ultisnips'
 Plugin 'godlygeek/tabular'
 Plugin 'henrik/vim-indexed-search'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'derekwyatt/vim-scala'
+Plugin 'vim-scripts/AutoComplPop'
+Plugin 'JazzCore/ctrlp-cmatcher'
+Plugin 'Valloric/YouCompleteMe'
 
 " Snippets are seperate from the engine
 Plugin 'honza/vim-snippets'
@@ -108,3 +117,4 @@ function! FoldAll()
         execute "normal zf%"
     endwhile
 endfunction
+

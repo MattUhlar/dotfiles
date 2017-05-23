@@ -98,23 +98,3 @@ Plugin 'honza/vim-snippets'
 Plugin 'altercation/vim-colors-solarized'
 
 filetype plugin indent on
-
-"=====Custom Functions=====
-
-" Fold all function, struct, and class bodies in a file [C/C++]
-" NOTE: only works with brace-on-own-line style
-"   ex: void foo()
-"       {
-"           bar();
-"       }
-function! FoldAll()
-    let flags = 'W' " Do not wrap around EOF
-    " Go to first line of file
-    execute "normal gg"
-    " Go to opening brace of each function/class/struct
-    while search('^{', flags)
-        " Fold until closing brace
-        execute "normal zf%"
-    endwhile
-endfunction
-

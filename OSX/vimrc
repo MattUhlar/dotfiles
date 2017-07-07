@@ -1,6 +1,65 @@
-"=====Colorscheme and Appearance=====
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vundle Plugins
+
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#rc()
+
+" Nerdtree 
+Plugin 'scrooloose/nerdtree'
+
+"Plugin 'scrooloose/syntastic'
+" DelimitMate
+Plugin 'Raimondi/delimitMate'
+
+" Neomake
+Plugin 'neomake/neomake'
+
+" Ultisnips
+Plugin 'sirver/ultisnips'
+
+" Vim-airline
+Plugin 'bling/vim-airline'
+
+" Vim-airline-themes
+Plugin 'vim-airline/vim-airline-themes'
+
+" Vim-easymotion
+Plugin 'easymotion/vim-easymotion'
+
+" YouCompleteMe
+Plugin 'Valloric/YouCompleteMe'
+
+" Vim-fugitive
+Plugin 'tpope/vim-fugitive'
+
+" Vim-surround
+Plugin 'tpope/vim-surround'
+
+" vim-colors-solarized
+Plugin 'altercation/vim-colors-solarized'
+
+" Vim-snippets
+Plugin 'honza/vim-snippets'
+
+" Vim-gitgutter
+Plugin 'airblade/vim-gitgutter'
+
+" Fzf
+Plugin 'junegunn/fzf'
+
+" Fzf.vim
+Plugin 'junegunn/fzf.vim'
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" General Settings
+
 " Terminal uses 256 colors
 set t_Co=256
+let g:solarized_termtrans=1
 colorscheme solarized
 set background=dark
 syntax on
@@ -11,43 +70,38 @@ set incsearch
 " Show number lines on file
 set number
 
-" vim-airline statusline appears at all times
-set laststatus=2
+let mapleader = "\\"
+let g:mapleader = "\\"
 
 " show matching brackets when text indicator is over them
 set showmatch
 
-"=====Spacing=====
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Spacing
 filetype plugin indent on
-set expandtab 
-set tabstop=4 
-set shiftwidth=4  
-set softtabstop=4" 
+set noexpandtab 
+set tabstop=2 
+set shiftwidth=2  
+set softtabstop=2" 
 set backspace=indent,eol,start
 
-"=====Moving Around, Tabs, Windows and Buffers=====
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" Moving Around, Tabs, Windows and Buffers
 
-" Smart way to move between windows
+" Window Movement
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" Plugin Configuration
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Change default mapping and the default command to invoke CtrlP
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-
-" Display buffer list and prompt for number
-map <leader>b :ls<CR>:b
-
-"=====Folding=====
-
-" toggle folds with spacebar
-nnoremap <Space> za
-" Set foreground color of folds
-hi Folded ctermfg=247
-
-"=====Plugins=====
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" YCM Config
 
 " Allow YCM to work with UltiSnips 
 let g:UltiSnipsSnippetsDir         = $HOME.'/.vim/UltiSnips/'
@@ -61,40 +115,58 @@ let g:ycm_complete_in_comments = 1
 let g:ycm_seed_identifiers_with_syntax = 1 
 let g:ycm_collect_identifiers_from_comments_and_strings = 1 
 
-let g:ycm_global_ycm_extra_conf = '/Users/mattu/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
 
-" Improved ctrlp searching using cmatcher
-let g:ctrlp_match_func = {'match' : 'matcher#cmatch'}
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_working_path_mode = 'rw'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" FZF Config
+nnoremap <C-f> :Files<return>
 
-" Vundle
-set nocompatible
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NerdTree Config
 
-filetype off
+" Open NERDTree with Ctrl+n
+map <C-n> :NERDTreeToggle<CR>
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'Raimondi/delimitMate'
-Plugin 'sirver/ultisnips'
-Plugin 'godlygeek/tabular'
-Plugin 'henrik/vim-indexed-search'
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'vim-scripts/AutoComplPop'
-Plugin 'JazzCore/ctrlp-cmatcher'
-Plugin 'Valloric/YouCompleteMe'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vim-fugitive Config
 
-" Snippets are seperate from the engine
-Plugin 'honza/vim-snippets'
+" vim-fugitive git shortcuts
+nnoremap <leader>gs :Gstatus<return>
+nnoremap <leader>gd :Gdiff<return>
+nnoremap <leader>gb :Gblame<return>
+nnoremap <leader>gr :Gread<return>
+nnoremap <leader>gc :Gcommit<return>
+nnoremap <leader>gw :Gwrite<return>
 
-" Colorscheme
-Plugin 'altercation/vim-colors-solarized'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Airline Config
 
-filetype plugin indent on
+" vim-airline statusline appears at all times
+set laststatus=2
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Neomake Config
+"
+"
+let g:neomake_javascript_eslint_maker = {
+	\ 'errorformat': '%E%f: line %l\, col %c\, Error - %m,' .
+		\ '%W%f: line %l\, col %c\, Warning - %m',
+	\ 'exe': "/usr/local/bin/eslint",
+	\ 'args': ['-f', 'compact', '--rule', '{"no-console":[1]}'],
+	\ }
+
+let g:neomake_less_lesshint_maker = {
+	\ 'errorformat': '%EError: %f: line %l\, col %c\, %m,' .
+		\ '%WWarning: %f: line %l\, col %c\, %m',
+	\ 'exe': "/usr/local/bin/lesshint"
+	\ }
+
+let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_jsx_enabled_makers = ['eslint']
+let g:neomake_less_enabled_makers = ['lesshint']
+let g:neomake_java_enabled_makers = []
+
+autocmd! BufWritePost * Neomake

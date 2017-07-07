@@ -1,4 +1,6 @@
 # Aliases
 alias cls="clear"
 alias l="ls -l"
-alias vi="vim"
+alias sl="ls"
+alias vi="nvim"
+alias vim="nvim"

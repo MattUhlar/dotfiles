@@ -68,7 +68,7 @@ syntax on
 set incsearch
 
 " Show number lines on file
-set number
+set relativenumber
 
 let mapleader = "\\"
 let g:mapleader = "\\"

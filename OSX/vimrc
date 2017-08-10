@@ -5,12 +5,11 @@ set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
+call vundle#begin()
 
 " Nerdtree 
 Plugin 'scrooloose/nerdtree'
 
-"Plugin 'scrooloose/syntastic'
 " DelimitMate
 Plugin 'Raimondi/delimitMate'
 
@@ -21,7 +20,7 @@ Plugin 'neomake/neomake'
 Plugin 'sirver/ultisnips'
 
 " Vim-airline
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
 
 " Vim-airline-themes
 Plugin 'vim-airline/vim-airline-themes'
@@ -53,6 +52,7 @@ Plugin 'junegunn/fzf'
 " Fzf.vim
 Plugin 'junegunn/fzf.vim'
 
+call vundle#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General Settings
@@ -67,8 +67,9 @@ syntax on
 " Incremental search highlighting
 set incsearch
 
-" Show number lines on file
+" Show relative and current line numbers
 set relativenumber
+set nu
 
 let mapleader = "\\"
 let g:mapleader = "\\"
@@ -148,25 +149,3 @@ nnoremap <leader>gw :Gwrite<return>
 set laststatus=2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Neomake Config
-"
-"
-let g:neomake_javascript_eslint_maker = {
-	\ 'errorformat': '%E%f: line %l\, col %c\, Error - %m,' .
-		\ '%W%f: line %l\, col %c\, Warning - %m',
-	\ 'exe': "/usr/local/bin/eslint",
-	\ 'args': ['-f', 'compact', '--rule', '{"no-console":[1]}'],
-	\ }
-
-let g:neomake_less_lesshint_maker = {
-	\ 'errorformat': '%EError: %f: line %l\, col %c\, %m,' .
-		\ '%WWarning: %f: line %l\, col %c\, %m',
-	\ 'exe': "/usr/local/bin/lesshint"
-	\ }
-
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_jsx_enabled_makers = ['eslint']
-let g:neomake_less_enabled_makers = ['lesshint']
-let g:neomake_java_enabled_makers = []
-
-autocmd! BufWritePost * Neomake
